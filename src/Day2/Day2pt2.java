@@ -16,7 +16,7 @@ public class Day2pt2 {
     final static String RED = " red";
 
     public static void main(String[] args) {
-        var filePath = Paths.get("C:/Users/rowen/java/AdventOfCode2023/src/Day2/Day2Input.txt");
+        var filePath = Paths.get("src/Day2/Day2Input.txt");
         try {
             var lines = Files.readAllLines(filePath);
             var games = new ArrayList<ArrayList<Handful>>();

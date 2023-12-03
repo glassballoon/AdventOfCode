@@ -9,8 +9,8 @@ import java.util.List;
 public class Day3pt2 {
 
     public static void main(String[] args) {
-//        var filePath = Paths.get("C:/Users/rowen/java/AdventOfCode2023/src/Day3/Day3TestInput.txt");
-        var filePath = Paths.get("C:/Users/rowen/java/AdventOfCode2023/src/Day3/Day3Input.txt");
+//        var filePath = Paths.get("src/Day3/Day3TestInput.txt");
+        var filePath = Paths.get("src/Day3/Day3Input.txt");
         try {
             var lines = Files.readAllLines(filePath);
 
