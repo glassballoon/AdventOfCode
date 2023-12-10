@@ -14,8 +14,8 @@ public class Day5pt2 {
 
         System.out.println(new Date());
 
-//        Path filePath = Paths.get("src/Input/Day4TestInput.txt");
-        Path filePath = Paths.get("src/Input/Day4Input.txt");
+        Path filePath = Paths.get("src/Input/Day4TestInput.txt");
+//        Path filePath = Paths.get("src/Input/Day4Input.txt");
         try {
             var lines = Files.readAllLines(filePath);
 

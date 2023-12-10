@@ -27,9 +27,7 @@ public class Day3pt1 {
                 }
                 allChars.addAll(characterArray);
             }
-//            for (int i = 0; i < allChars.size(); i++) {
-//                System.out.println(hasAdjacentSymbol(allChars, i, numRows, numColumns));
-//            }
+
             int index = 0;
             var validNums = new ArrayList<Integer>();
             boolean startedNum = false;
