@@ -1,11 +1,8 @@
 package Day8;
 
-import Day5.LocationMapper;
-
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -57,6 +54,5 @@ public class Day8pt1 {
         else
             return values.get(element).get(0);
     }
-
 
 }
