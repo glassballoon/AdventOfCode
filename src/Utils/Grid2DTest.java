@@ -26,7 +26,7 @@ class Grid2DTest {
         testFile.add("PQRST");
         testFile.add("UVWXY");
         grid = new Grid2D();
-        grid.loadFile(testFile);
+        grid.loadGrid(testFile);
     }
 
     @Test

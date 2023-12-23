@@ -21,18 +21,16 @@ public class Day11Grid extends Grid2D {
     }
 
     @Override
-    public void loadFile(List<String> lines){
+    public void loadGrid(List<String> lines){
         setNumRows(lines.size());
         setNumColumns(lines.get(0).length());
 
         //let's pop everything into a huge ArrayList
-        var allChars = new ArrayList<Character>();
         for (var line: lines){
             for (var c: line.toCharArray()){
                 getGrid().add(c);
                 if (c == galaxy) galaxies.add(getGrid().size()-1);
             }
-            allChars.addAll(getGrid());
         }
     }
 

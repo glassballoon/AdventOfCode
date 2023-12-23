@@ -16,13 +16,11 @@ public class Day11pt2 {
             var lines = Files.readAllLines(filePath);
 
             var grid = new Day11Grid();
-            grid.loadFile(lines);
+            grid.loadGrid(lines);
 
             var emptyRows = grid.getEmptyRows();
             var emptyColumns = grid.getEmptyColumns();
-
             var galaxies = grid.getGalaxies();
-
             var distances = new ArrayList<Long>();
 
             for (int i = 0; i < galaxies.size(); i++){ // i = firstGalaxy location/index

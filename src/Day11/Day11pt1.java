@@ -17,7 +17,7 @@ public class Day11pt1 {
             var lines = Files.readAllLines(filePath);
 
             var grid = new Day11Grid();
-            grid.loadFile(lines);
+            grid.loadGrid(lines);
 
             var emptyRows = grid.getEmptyRows();
             var emptyColumns = grid.getEmptyColumns();

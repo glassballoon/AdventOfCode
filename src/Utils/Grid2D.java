@@ -33,7 +33,7 @@ public class Grid2D {
         this.numColumns = numColumns;
     }
 
-    public void loadFile(List<String> lines){
+    public void loadGrid(List<String> lines){
         numRows = lines.size();
         numColumns = lines.get(0).length();
 
@@ -53,6 +53,10 @@ public class Grid2D {
         if (row > numRows) return null;
         if (col > numColumns) return null;
         return grid.get((row * numRows) + col);
+    }
+
+    public void setCharacterAt(int index, Character c){
+        grid.set(index, c);
     }
 
     public Character getCharacterAt(int index){
@@ -113,4 +117,6 @@ public class Grid2D {
         }
         return columnArray;
     }
+
+
 }
