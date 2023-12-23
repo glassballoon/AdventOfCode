@@ -25,6 +25,10 @@ public class Grid2D {
         return numColumns;
     }
 
+    public int getSize() {
+        return grid.size();
+    }
+
     public void setNumRows(int numRows) {
         this.numRows = numRows;
     }
@@ -47,6 +51,10 @@ public class Grid2D {
         }
     }
 
+    public Character getCharacterAt(int index){
+        return grid.get(index);
+    }
+
     /* return the character at a certain column and row location */
     //@TODO - set up some out of bounds handling
     public Character getCharacterAt(int row, int col){
@@ -59,8 +67,8 @@ public class Grid2D {
         grid.set(index, c);
     }
 
-    public Character getCharacterAt(int index){
-        return grid.get(index);
+    public void setCharacterAt(Character c, int row, int col){
+        setCharacterAt((row * numColumns) + col, c);
     }
 
     public int getRowNumber(int index){
@@ -118,5 +126,10 @@ public class Grid2D {
         return columnArray;
     }
 
-
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (var c: grid) sb.append(c);
+        return sb.toString();
+    }
 }
