@@ -56,6 +56,16 @@ class Grid2DTest {
     }
 
     @Test
+    public void testGetLocationAbove() {
+        assertEquals(grid.getLocationAbove(6), 1);
+    }
+
+    @Test
+    public void testGetLocationAbove_topRow() {
+        assertEquals(grid.getLocationAbove(1), -1);
+    }
+
+    @Test
     public void testGetCharacterAbove() {
         assertNull(grid.getCharacterAbove(E));
         assertEquals(grid.getCharacterAbove(L), 'G');
@@ -70,15 +80,45 @@ class Grid2DTest {
     }
 
     @Test
+    public void testGetLocationToRight() {
+        assertEquals(grid.getLocationToRight(6), 7);
+    }
+
+    @Test
+    public void testGetLocationAbove_endRow() {
+        assertEquals(grid.getLocationToRight(4), -1);
+    }
+
+    @Test
     public void testGetCharacterBelow() {
         assertEquals(grid.getCharacterBelow(E), 'J');
         assertEquals(grid.getCharacterBelow(L), 'Q');
         assertNull(grid.getCharacterBelow(Y));
+    }
+
+    @Test
+    public void testGetLocationBelow() {
+        assertEquals(grid.getLocationBelow(6), 11);
+    }
+
+    @Test
+    public void testGetLocationBelow_bottomRow() {
+        assertEquals(grid.getLocationBelow(23), -1);
     }
     @Test
     public void testGetCharacterToLeft() {
         assertEquals(grid.getCharacterToLeft(E), 'D');
         assertEquals(grid.getCharacterToLeft(L), 'K');
         assertEquals(grid.getCharacterToLeft(Y), 'X');
+    }
+
+    @Test
+    public void testGetLocationToLeft() {
+        assertEquals(grid.getLocationToLeft(6), 5);
+    }
+
+    @Test
+    public void testGetLocationToLeft_beginRow() {
+        assertEquals(grid.getLocationToLeft(5), -1);
     }
 }

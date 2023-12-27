@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Grid2D {
 
-    private ArrayList<Character> grid = new ArrayList<Character>();
-    private int numRows;
-    private int numColumns;
+    protected ArrayList<Character> grid = new ArrayList<Character>();
+    protected int numRows;
+    protected int numColumns;
 
     public Grid2D() {
 
@@ -79,34 +79,50 @@ public class Grid2D {
         return index%numColumns;
     }
 
+    public int getLocationAbove(int index){
+        if (getRowNumber(index) != 0)
+            return index-numColumns;
+        else return -1;
+    }
+
     public Character getCharacterAbove(int index){
         // get row number
-        if (getRowNumber(index) != 0)
-            return grid.get(index-numColumns);
-        else
-            return null;
+        if (getLocationAbove(index) == -1) return null;
+        else return grid.get(getLocationAbove(index));
+    }
+
+    public int getLocationToRight(int index){
+        if (getColumnNumber(index) != numColumns-1)
+            return index+1;
+        else return -1;
     }
 
     public Character getCharacterToRight(int index){
-        if (getColumnNumber(index) != numColumns-1)
-            return grid.get(index+1);
-        else
-            return null;
+        if (getLocationToRight(index) == -1) return null;
+        else return grid.get(getLocationToRight(index));
+    }
+
+    public int getLocationBelow(int index){
+        if (getRowNumber(index) != numRows-1)
+            return index+numColumns;
+        else return -1;
     }
 
     public Character getCharacterBelow(int index){
+        if (getLocationBelow(index) == -1) return null;
         // get row number
-        if (getRowNumber(index) != numRows-1)
-            return grid.get(index+numColumns);
-        else
-            return null;
+        else return grid.get(getLocationBelow(index));
+    }
+
+    public int getLocationToLeft(int index){
+        if (getColumnNumber(index) != 0)
+            return index-1;
+        else return -1;
     }
 
     public Character getCharacterToLeft(int index){
-        if (getColumnNumber(index) != 0)
-            return grid.get(index-1);
-        else
-            return null;
+        if (getLocationToLeft(index) == -1) return null;
+        else return grid.get(getLocationToLeft(index));
     }
 
     public ArrayList<Character> getCharactersInRow(int row){
@@ -129,7 +145,10 @@ public class Grid2D {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (var c: grid) sb.append(c);
+
+        for (var c: grid)
+            sb.append(c);
+
         return sb.toString();
     }
 }
